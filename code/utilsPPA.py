@@ -787,19 +787,19 @@ def runAllST(parameter_dict, simulation_dict, DAscenario, profiletype, out_dir):
         S_PPA_beta = S_PPA_opt_all_betas_np[beta_row,2:]   # Get the row for the specific beta
 
         #Run ST optimization with PPA split from LT
-        # runST(
-        #     beta,
-        #     parameter_dict,
-        #     simulation_dict,
-        #     S_PPA_beta,
-        #     PPA_price,
-        #     PPA_discount,
-        #     EBESS,
-        #     PbMax,
-        #     DAscenario,
-        #     profiletype,
-        #     ST_out_dir = ST_out_dir + f'beta_{beta}_PPA_discount_{PPA_discount}/'
-        # )
+        runST(
+            beta,
+            parameter_dict,
+            simulation_dict,
+            S_PPA_beta,
+            PPA_price,
+            PPA_discount,
+            EBESS,
+            PbMax,
+            DAscenario,
+            profiletype,
+            ST_out_dir = ST_out_dir + f'beta_{beta}_PPA_discount_{PPA_discount}/'
+        )
 
         # Run post-processing - still needs variable PPA pricing
         runPostProcessing(
